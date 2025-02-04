@@ -1108,40 +1108,80 @@
       <!--
         - #CONTACT
       -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+      <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+        <div class="contact-description">
+            <p>If you'd like to work with me, have any questions, or just want to say hello, feel free to reach out!</p>
+        </div>
+        <div class="contact-form">
+            <form id="contactForm" action="https://formsubmit.co/amcreative28@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="successMessage" style="display:none; color: green;">Thank you for your message!</div>
+        </div>
     </div>
+</section>
+
+<script>
+    document.getElementById('contactForm').onsubmit = function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = this;
+
+        // Send the form data
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('successMessage').style.display = 'block';
+                form.reset(); // Clear the form fields
+            } else {
+                alert('There was a problem with your submission. Please try again.');
+            }
+        })
+        .catch(error => {
+            alert('There was a problem with your submission. Please try again.');
+        });
+    };
+</script>
+
+<style>
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .contact-form button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .contact-form button:hover {
+        background-color: #218838;
+    }
+</style>
+
 
   </main>
 
