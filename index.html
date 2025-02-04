@@ -1112,10 +1112,10 @@
     <h2>Contact Me</h2>
     <div class="contact-container">
         <div class="contact-description">
-            <p>If you'd like to work with me, have any questions, or just want to say hello, feel free to reach out!</p>
+            <p>If you have any questions please contact me</p>
         </div>
         <div class="contact-form">
-            <form id="contactForm" action="https://formsubmit.co/amcreative28@gmail.com" method="POST">
+            <form id="contactForm" action="https://formsubmit.co/ararsogx@gmail.com" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -1164,8 +1164,15 @@
         max-width: 400px;
         padding: 10px;
         margin: 10px 0;
-        border: 1px solid #ccc;
+        border: 2px solid white; /* Change border color to white */
         border-radius: 4px;
+        color: white; /* Change text color to white */
+        background-color: #333; /* Optional: Change background for better contrast */
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #ccc; /* Optional: Change the focus border to a lighter color for visibility */
     }
 
     .contact-form button {
@@ -1187,8 +1194,13 @@
     #contact .contact-form button {
         color: white; /* Change text color to white */
     }
-</style>
 
+    /* Placeholder text color */
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: #ccc; /* Change placeholder text color for better visibility */
+    }
+</style>
 
 
   </main>
