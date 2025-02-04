@@ -1108,23 +1108,32 @@
       <!--
         - #CONTACT
       -->
-      <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-        <div class="contact-description">
-            <p>If you have any questions please contact me</p>
-        </div>
-        <div class="contact-form">
-            <form id="contactForm" action="https://formsubmit.co/furtutech1@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div id="successMessage" style="display:none; color: green;">Thank you for your message!</div>
-        </div>
-    </div>
-</section>
+      <article class="contact" id="contact" data-page="contact">
+
+    <header>
+        <h2 class="h2 article-title">Contact Me</h2>
+    </header>
+
+    <section class="contact-form">
+
+        <h3 class="h3 form-title">Contact Form</h3>
+
+        <form id="contactForm" action="https://formsubmit.co/ararsogx@gmail.com" method="POST" class="form" data-form>
+            <div class="input-wrapper">
+                <input type="text" name="name" class="form-input" placeholder="Your Name" required data-form-input>
+                <input type="email" name="email" class="form-input" placeholder="Your Email" required data-form-input>
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" rows="5" required data-form-input></textarea>
+            <button class="form-btn" type="submit" data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+            </button>
+        </form>
+        <div id="successMessage" style="display:none; color: green;">Thank you for your message!</div>
+
+    </section>
+
+</article>
 
 <script>
     document.getElementById('contactForm').onsubmit = function(event) {
@@ -1152,14 +1161,17 @@
 </script>
 
 <style>
-    .contact-container {
+    .contact {
+        color: white; /* Set text color for the contact section */
+    }
+
+    .contact-form {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    .form-input {
         width: 100%;
         max-width: 400px;
         padding: 10px;
@@ -1167,37 +1179,30 @@
         border: 2px solid white; /* Change border color to white */
         border-radius: 4px;
         color: white; /* Change text color to white */
-        background-color: #333; /* Optional: Change background for better contrast */
+        background-color: #333; /* Dark background for contrast */
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-        border-color: #ccc; /* Optional: Change the focus border to a lighter color for visibility */
+    .form-input:focus {
+        border-color: #ccc; /* Optional: Change the focus border to a lighter color */
     }
 
-    .contact-form button {
+    .form-btn {
         padding: 10px 15px;
         background-color: #28a745;
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
     }
 
-    .contact-form button:hover {
+    .form-btn:hover {
         background-color: #218838;
     }
 
-    /* Set text color to white for the contact section */
-    #contact h2,
-    #contact .contact-description p,
-    #contact .contact-form button {
-        color: white; /* Change text color to white */
-    }
-
     /* Placeholder text color */
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
+    .form-input::placeholder {
         color: #ccc; /* Change placeholder text color for better visibility */
     }
 </style>
