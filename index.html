@@ -942,7 +942,7 @@
 
       </article>
 
-<!--
+      <!--
         - #BLOG
 -->
 
@@ -957,7 +957,7 @@
     <ul class="blog-posts-list">
 
       <li class="blog-post-item">
-        <a href="#"> 
+        <a href="javascript:void(0);" onclick="toggleContent()">
           <figure class="blog-banner-box">
             <img src="./assets/images/blog-1.jpg" alt="Introduction to Digital Marketing" loading="lazy">
           </figure>
@@ -974,8 +974,9 @@
 
             <h3 class="h3 blog-item-title">Introduction to Digital Marketing</h3>
 
-            <p class="blog-text">
-              Digital marketing is essential in today’s tech-driven world. Unlike traditional marketing, it uses online platforms to reach a target audience. Key strategies include social media marketing, SEO, email campaigns, and online advertising. Real-time results through analytics allow marketers to adjust campaigns for better outcomes. As consumers turn to the internet for purchases, digital marketing has become vital for growth and customer engagement.
+            <p class="blog-text" id="short-text">
+              Digital marketing is essential in today’s tech-driven world. Unlike traditional marketing, it uses online platforms to reach a target audience. Key strategies include social media marketing, SEO, email campaigns, and online advertising. Real-time results through analytics allow marketers to adjust campaigns for better outcomes. 
+              <span id="more-text" style="display:none;">As consumers turn to the internet for purchases, digital marketing has become vital for growth and customer engagement. Whether you're a startup or a large enterprise, embracing digital marketing opens doors to a vast online audience and creates opportunities for growth.</span>
             </p>
 
           </div>
@@ -985,6 +986,22 @@
     </ul>
   </section>
 </article>
+
+<script>
+  function toggleContent() {
+    var moreText = document.getElementById("more-text");
+    var shortText = document.getElementById("short-text");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      shortText.style.display = "none";
+    } else {
+      moreText.style.display = "none";
+      shortText.style.display = "inline";
+    }
+  }
+</script>
+
 
 
               </a>
